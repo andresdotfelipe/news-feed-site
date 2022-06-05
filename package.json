@@ -1,0 +1,23 @@
+{
+  "name": "news-feed-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresdotfelipe/news-feed-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresdotfelipe/news-feed-site/issues"
+  },
+  "homepage": "https://github.com/andresdotfelipe/news-feed-site#readme",
+  "dependencies": {
+    "sass": "^1.52.2"
+  }
+}
