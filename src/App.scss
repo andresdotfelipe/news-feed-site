@@ -10,9 +10,13 @@ $open-sans: 'Open Sans', sans-serif;
 
 body {
     font-family: $open-sans;
-}
 
-a {
-    color: inherit;
-    text-decoration: none;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    main {
+        margin: 40px 20px;
+    }
 }
