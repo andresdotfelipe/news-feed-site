@@ -1,0 +1,19 @@
+.news {
+    display: grid;
+
+    .eui-card {
+
+        img {
+            height: 248px;
+            margin-bottom: 10px;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+    
+    .view-more-stories-btn {
+        color: #ffffff;
+        justify-self: center;
+        margin-top: 80px;
+    }
+}
