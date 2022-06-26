@@ -1,7 +1,13 @@
 .news {
     display: grid;
 
+    .eui-spinner {
+        justify-self: center;
+        margin: 20px 0 40px;
+    }
+
     .eui-card {
+        box-shadow: none;
 
         img {
             height: 248px;
