@@ -1,6 +1,6 @@
-import './LandingAlert.scss';
 import { useState } from 'react';
 import Alert from 'emerald-ui/lib/Alert';
+import './LandingAlert.scss';
 
 const LandingAlert = () => {
     const [showAlert, setShowAlert] = useState(true);

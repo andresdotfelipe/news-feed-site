@@ -1,8 +1,8 @@
-import './App.scss';
-import 'emerald-ui/lib/styles.css';
 import Header from './components/Header';
 import LandingAlert from './components/LandingAlert';
 import News from './components/News';
+import 'emerald-ui/lib/styles.css';
+import './App.scss';
 
 const App = () => {
   return (

@@ -1,10 +1,10 @@
-import './Header.scss';
 import { Navbar, Container, Nav, DropdownButton, DropdownItem, Avatar } from 'emerald-ui/lib';
 import SportsIcon from '../Icons/SportsIcon';
 import EntertainmentIcon from '../Icons/EntertainmentIcon';
 import EconomicsIcon from '../Icons/EconomicsIcon';
 import TechnologyIcon from '../Icons/TechnologyIcon';
 import MusicIcon from '../Icons/MusicIcon';
+import './Header.scss';
 
 const Header = () => {
     return (
@@ -15,11 +15,11 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav grow collapsible>                                        
                     <DropdownButton title="Sections" id="dd1">
-                        <DropdownItem eventKey="1">Sports<SportsIcon/></DropdownItem>
-                        <DropdownItem eventKey="2">Entertainment<EntertainmentIcon/></DropdownItem>
-                        <DropdownItem eventKey="2">Economics<EconomicsIcon/></DropdownItem>
-                        <DropdownItem eventKey="2">Technology<TechnologyIcon/></DropdownItem>
-                        <DropdownItem eventKey="2">Music<MusicIcon/></DropdownItem>
+                        <DropdownItem eventKey="1"><SportsIcon/>Sports</DropdownItem>
+                        <DropdownItem eventKey="2"><EntertainmentIcon/>Entertainment</DropdownItem>
+                        <DropdownItem eventKey="2"><EconomicsIcon/>Economics</DropdownItem>
+                        <DropdownItem eventKey="2"><TechnologyIcon/>Technology</DropdownItem>
+                        <DropdownItem eventKey="2"><MusicIcon/>Music</DropdownItem>
                     </DropdownButton>
                     <a href="#foo">Editorial</a>
                     <a href="#foo">Contact us</a>

@@ -1,11 +1,11 @@
-import './News.scss';
 import { useState, useEffect, useCallback } from 'react';
 import { CardGrid, Card, Button, Panel, Spinner } from 'emerald-ui/lib';
+import './News.scss';
 
 const News = () => {
     const [news, setNews] = useState([]);
     const [page, setPage] = useState(0);
-    const [showViewMoreButton, setShowViewMoreButton] = useState(true);
+    const [showViewMoreButton, setShowViewMoreButton] = useState(false);
     const [fetchMoreStories, setFetchMoreStories] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const limit = 4;
@@ -22,9 +22,10 @@ const News = () => {
                     setPage(page+1);              
                     if (data.articles.slice((page+1)*limit, (page+1)*limit+limit).length < 1) {
                         setShowViewMoreButton(false);
-                    }
+                    }                    
+                    setFetchMoreStories(false);
                     setIsLoading(false);
-                    setFetchMoreStories(false);                    
+                    if (page === 0) setShowViewMoreButton(true);
                 }
             } catch (error) {
                 console.log(error);
@@ -44,7 +45,7 @@ const News = () => {
 
     return (
         <section className='news'>
-            { isLoading ? <Spinner /> :
+            { isLoading && <Spinner /> }
                 <>
                     <Panel>
                         <CardGrid>
@@ -68,9 +69,7 @@ const News = () => {
                         </Button>
                     }
                 </>                
-            }
         </section>
-
     );
 }
 
