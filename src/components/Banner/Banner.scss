@@ -39,11 +39,12 @@
         }
     }
 
-    @media (max-width: 799px) {
-        
-        .details {
-            display: grid;
-            place-items: center;
+    @media (max-width: 799px) {      
+
+        .details {            
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
 
             h1 {
                 font-size: 20px;
@@ -53,8 +54,8 @@
             .description {
                 font-size: 12px;
                 margin: 0 0 10px;
-                text-align: justify;
-                width: 80%;
+                text-align: center;
+                width: 300px;
             }
 
             .subscribe-button {
