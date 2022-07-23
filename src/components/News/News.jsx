@@ -47,6 +47,7 @@ const News = () => {
         <section className='news'>
             { isLoading && <Spinner /> }
                 <>
+                    <h1>Top News</h1>
                     <Panel>
                         <CardGrid>
                             {

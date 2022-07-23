@@ -2,6 +2,7 @@ import Header from './components/Header';
 import LandingAlert from './components/LandingAlert';
 import News from './components/News';
 import Banner from './components/Banner';
+import Contact from './components/Contact';
 import 'emerald-ui/lib/styles.css';
 import { Container } from 'emerald-ui/lib';
 import './App.scss';
@@ -14,7 +15,10 @@ const App = () => {
         <LandingAlert />
         <News />
       </Container>
-      <Banner />     
+      <Banner />
+      <Container>
+        <Contact />
+      </Container>
     </>
   );
 }
