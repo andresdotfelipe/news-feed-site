@@ -38,4 +38,29 @@
             padding: 12px 55px;
         }
     }
+
+    @media (max-width: 799px) {
+        
+        .details {
+            display: grid;
+            place-items: center;
+
+            h1 {
+                font-size: 20px;
+                margin: 0 0 10px;
+            }
+
+            .description {
+                font-size: 12px;
+                margin: 0 0 10px;
+                text-align: justify;
+                width: 80%;
+            }
+
+            .subscribe-button {
+                font-size: 12px;
+                padding: 5px 15px;
+            }
+        }
+    }
 }
