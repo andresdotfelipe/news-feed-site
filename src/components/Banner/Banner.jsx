@@ -9,8 +9,8 @@ const Banner = () => {
             <Container>
                 <section className='details'>
                     <h1>Subscribe to our newsletter.</h1>
-                    <p class="description">Subscribe to our newsletter to receive weekly digests of the best and most ground-breaking news. Also receive a discount on your monthly subscription.</p>
-                    <button class="subscribe-button">Subscribe</button>
+                    <p className="description">Subscribe to our newsletter to receive weekly digests of the best and most ground-breaking news. Also receive a discount on your monthly subscription.</p>
+                    <button className="subscribe-button">Subscribe</button>
                 </section>               
             </Container>
         </section>

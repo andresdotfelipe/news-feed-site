@@ -47,7 +47,7 @@ const Contact = () => {
                         <Col xs={12} md={6}>
                             <Row>
                                 <Col xs={12}>
-                                    <label for="first-name">First name</label>                                    
+                                    <label htmlFor="first-name">First name</label>                                    
                                 </Col>
                                 <Col xs={12}>
                                     <input type="text" name="first-name" required pattern="[a-zA-Z]*" value={contactInfo['first-name']} onChange={onChange}/>
@@ -57,7 +57,7 @@ const Contact = () => {
                         <Col xs={12} md={6}>
                             <Row>
                                 <Col xs={12}>
-                                    <label for="last-name">Last name</label>                                    
+                                    <label htmlFor="last-name">Last name</label>                                    
                                 </Col>
                                 <Col xs={12}>
                                     <input type="text" name="last-name" required pattern="[a-zA-Z]*" value={contactInfo['last-name']} onChange={onChange}/>
@@ -67,7 +67,7 @@ const Contact = () => {
                         <Col xs={12} md={6}>
                             <Row>
                                 <Col xs={12}>
-                                    <label for="email">Email</label>                                    
+                                    <label htmlFor="email">Email</label>                                    
                                 </Col>
                                 <Col xs={12}>
                                     <input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" value={contactInfo['email']} onChange={onChange}/>
@@ -77,7 +77,7 @@ const Contact = () => {
                         <Col xs={12} md={6}>
                             <Row>
                                 <Col xs={12}>
-                                    <label for="phone-number">Phone number</label>                                    
+                                    <label htmlFor="phone-number">Phone number</label>                                    
                                 </Col>
                                 <Col xs={12}>
                                     <input type="tel" name="phone-number" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={contactInfo['phone-number']} onChange={onChange}/>
@@ -87,7 +87,7 @@ const Contact = () => {
                         <Col xs={12}>
                             <Row>
                                 <Col xs={12}>
-                                    <label for="message">Message</label>
+                                    <label htmlFor="message">Message</label>
                                 </Col>
                                 <Col xs={12}>
                                     <textarea name="message" rows="5" required value={contactInfo['message']} onChange={onChange}></textarea>    
@@ -96,7 +96,7 @@ const Contact = () => {
                         </Col>                    
                         <Col xs={12} className="emails-check-col">
                             <input type="checkbox" id="emails-check" name="emails-check" checked={contactInfo['emails-check']} onChange={onChange}/>
-                            <label for="emails-check">Send me emails about breaking news and promotions.</label>
+                            <label htmlFor="emails-check">Send me emails about breaking news and promotions.</label>
                         </Col>
                     </Row>                                                        
                     <Button type="submit" name="submit" color="brand">
