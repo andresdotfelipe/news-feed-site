@@ -6,11 +6,11 @@ import {
   DropdownItem,
   Avatar,
 } from "emerald-ui/lib";
-import SportsIcon from "../Icons/SportsIcon";
-import EntertainmentIcon from "../Icons/EntertainmentIcon";
-import EconomicsIcon from "../Icons/EconomicsIcon";
-import TechnologyIcon from "../Icons/TechnologyIcon";
-import MusicIcon from "../Icons/MusicIcon";
+import SportsIcon from "../../assets/Icons/SportsIcon";
+import EntertainmentIcon from "../../assets/Icons/EntertainmentIcon";
+import EconomicsIcon from "../../assets/Icons/EconomicsIcon";
+import TechnologyIcon from "../../assets/Icons/TechnologyIcon";
+import MusicIcon from "../../assets/Icons/MusicIcon";
 import "./Header.scss";
 
 const Header = () => {
