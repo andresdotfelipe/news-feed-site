@@ -4,6 +4,7 @@ import './News.scss';
 
 const News = () => {
     const [news, setNews] = useState([]);
+    const [fetchNewsResponse, setFetchNewsResponse] = useState([]);
     const [page, setPage] = useState(0);
     const [showViewMoreButton, setShowViewMoreButton] = useState(false);
     const [fetchMoreStories, setFetchMoreStories] = useState(false);
@@ -13,14 +14,12 @@ const News = () => {
     const fetchNews = useCallback(
         async () => {
             try {
-                if (page === 0 || fetchMoreStories) {
-                    setIsLoading(true);
-                    const response = await fetch('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json');
-                    const data = await response.json();
-                    const articles = [...news, ...data.articles.slice(page*limit, page*limit+limit)];
+                if ((page === 0 || fetchMoreStories) && fetchNewsResponse.length > 0) {
+                    setIsLoading(true);                    
+                    const articles = [...news, ...fetchNewsResponse.slice(page*limit, page*limit+limit)];
                     setNews(articles);  
                     setPage(page+1);              
-                    if (data.articles.slice((page+1)*limit, (page+1)*limit+limit).length < 1) {
+                    if (fetchNewsResponse.slice((page+1)*limit, (page+1)*limit+limit).length < 1) {
                         setShowViewMoreButton(false);
                     }                    
                     setFetchMoreStories(false);
@@ -31,7 +30,7 @@ const News = () => {
                 console.log(error);
             }
         },
-        [news, page, limit, fetchMoreStories]
+        [news, fetchNewsResponse, page, limit, fetchMoreStories]
     );
 
     const handleViewMoreStoriesClick = () => {
@@ -39,8 +38,17 @@ const News = () => {
         fetchNews();
     }
 
+    useEffect(() => {        
+        async function fetchNewsFromAPI () {
+            const response = await fetch('https://saurav.tech/NewsAPI/top-headlines/category/health/in.json');
+            const data = await response.json();
+            setFetchNewsResponse(data.articles);
+        }   
+        fetchNewsFromAPI();                 
+    }, []);
+
     useEffect(() => {
-        fetchNews();
+        fetchNews();       
     }, [fetchNews]);
 
     return (
