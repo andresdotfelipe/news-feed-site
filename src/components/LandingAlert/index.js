@@ -1,1 +1,1 @@
-export { default } from './LandingAlert';
+export { default } from "./LandingAlert";

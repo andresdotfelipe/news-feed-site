@@ -1,48 +1,49 @@
 .contact {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
 
-    .eui-panel {
-        margin-top: 40px;
-        padding: 40px 30px;
+  .eui-panel {
+    margin-top: 40px;
+    padding: 40px 30px;
 
-        form {
-            display: flex;
-            flex-direction: column;
+    form {
+      display: flex;
+      flex-direction: column;
 
-            input:not([type=checkbox]):not([type=submit]), textarea {
-                border: 1px solid #babcbc;
-                border-radius: 5px;
-                font-size: 14px;
-                margin: 5px 0 50px;      
-                width: 100%;      
-            }
-          
-            input:not([type=checkbox]):not([type=submit]) {
-                height: 35px;
-                padding: 0 10px;
-            }
-        
-            textarea {
-                resize: none;
-                padding: 10px;
-                width: 100%;
-            }
+      input:not([type="checkbox"]):not([type="submit"]),
+      textarea {
+        border: 1px solid #babcbc;
+        border-radius: 5px;
+        font-size: 14px;
+        margin: 5px 0 50px;
+        width: 100%;
+      }
 
-            .emails-check-col {                
-                display: flex;                
+      input:not([type="checkbox"]):not([type="submit"]) {
+        height: 35px;
+        padding: 0 10px;
+      }
 
-                #emails-check {
-                    margin: 0 7px 5px 0;
-                }
-            }            
-    
-            button[type=submit] {
-              align-self: center;
-              margin-top: 40px;
-              width: 170px;        
-            }
+      textarea {
+        resize: none;
+        padding: 10px;
+        width: 100%;
+      }
+
+      .emails-check-col {
+        display: flex;
+
+        #emails-check {
+          margin: 0 7px 5px 0;
         }
+      }
+
+      button[type="submit"] {
+        align-self: center;
+        margin-top: 40px;
+        width: 170px;
+      }
     }
+  }
 }

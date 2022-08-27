@@ -1,16 +1,16 @@
-import Header from './components/Header';
-import LandingAlert from './components/LandingAlert';
-import News from './components/News';
-import Banner from './components/Banner';
-import Contact from './components/Contact';
-import 'emerald-ui/lib/styles.css';
-import { Container } from 'emerald-ui/lib';
-import './App.scss';
+import Header from "./components/Header";
+import LandingAlert from "./components/LandingAlert";
+import News from "./components/News";
+import Banner from "./components/Banner";
+import Contact from "./components/Contact";
+import "emerald-ui/lib/styles.css";
+import { Container } from "emerald-ui/lib";
+import "./App.scss";
 
 const App = () => {
   return (
-    <>      
-      <Header />      
+    <>
+      <Header />
       <Container>
         <LandingAlert />
         <News />
@@ -21,6 +21,6 @@ const App = () => {
       </Container>
     </>
   );
-}
+};
 
 export default App;

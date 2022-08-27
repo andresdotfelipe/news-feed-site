@@ -1,18 +1,18 @@
 // Font
-$open-sans: 'Open Sans', sans-serif;
+$open-sans: "Open Sans", sans-serif;
 
 * {
-    box-sizing: border-box;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: $open-sans;
+  font-family: $open-sans;
 
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
