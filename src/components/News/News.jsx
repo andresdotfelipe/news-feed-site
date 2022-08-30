@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { CardGrid, Card, Button, Panel, Spinner } from "emerald-ui/lib";
 import "./News.scss";
 
@@ -7,41 +7,8 @@ const News = () => {
   const [fetchNewsResponse, setFetchNewsResponse] = useState([]);
   const [page, setPage] = useState(0);
   const [showViewMoreButton, setShowViewMoreButton] = useState(false);
-  const [fetchMoreStories, setFetchMoreStories] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const limit = 4;
-
-  const fetchNews = useCallback(async () => {
-    try {
-      if ((page === 0 || fetchMoreStories) && fetchNewsResponse.length > 0) {
-        setIsLoading(true);
-        const articles = [
-          ...news,
-          ...fetchNewsResponse.slice(page * limit, page * limit + limit),
-        ];
-        setNews(articles);
-        setPage(page + 1);
-        if (
-          fetchNewsResponse.slice(
-            (page + 1) * limit,
-            (page + 1) * limit + limit
-          ).length < 1
-        ) {
-          setShowViewMoreButton(false);
-        }
-        setFetchMoreStories(false);
-        setIsLoading(false);
-        if (page === 0) setShowViewMoreButton(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, [news, fetchNewsResponse, page, limit, fetchMoreStories]);
-
-  const handleViewMoreStoriesClick = () => {
-    setFetchMoreStories(true);
-    fetchNews();
-  };
 
   useEffect(() => {
     async function fetchNewsFromAPI() {
@@ -50,13 +17,26 @@ const News = () => {
       );
       const data = await response.json();
       setFetchNewsResponse(data.articles);
+      setIsLoading(true);
     }
     fetchNewsFromAPI();
   }, []);
 
   useEffect(() => {
-    fetchNews();
-  }, [fetchNews]);
+    if (isLoading) {      
+      const articles = [
+        ...news,
+        ...fetchNewsResponse.slice(page * limit, page * limit + limit),
+      ];
+      setNews(articles);
+      setPage(page + 1);
+      setIsLoading(false);
+    }
+    if (page > 0) setShowViewMoreButton(true);
+    if (news.length === fetchNewsResponse.length) {
+      setShowViewMoreButton(false);
+    }
+  }, [fetchNewsResponse, isLoading, news, page]);
 
   return (
     <section className="news">
@@ -87,7 +67,7 @@ const News = () => {
           <Button
             className="view-more-stories-btn"
             color="brand"
-            onClick={handleViewMoreStoriesClick}
+            onClick={() => setIsLoading(true)}
           >
             <span>View more stories</span>
           </Button>
