@@ -7,7 +7,7 @@ const News = () => {
   const [fetchNewsResponse, setFetchNewsResponse] = useState([]);
   const [page, setPage] = useState(0);
   const [showViewMoreButton, setShowViewMoreButton] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const limit = 4;
 
   useEffect(() => {
@@ -16,14 +16,13 @@ const News = () => {
         "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"
       );
       const data = await response.json();
-      setFetchNewsResponse(data.articles);
-      setIsLoading(true);
+      setFetchNewsResponse(data.articles);      
     }
     fetchNewsFromAPI();
   }, []);
 
   useEffect(() => {
-    if (isLoading) {      
+    if (fetchNewsResponse.length > 0 && isLoading) {      
       const articles = [
         ...news,
         ...fetchNewsResponse.slice(page * limit, page * limit + limit),
